@@ -1,0 +1,8 @@
+<!-- -->
+<launch>
+  <node name="AddTask_Subscriber_test" pkg="test" type="test_Addtask_Pub.py" output = "screen" respawn ="true">
+  </node>
+</launch>
+
+
+
