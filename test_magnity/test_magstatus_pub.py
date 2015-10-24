@@ -21,4 +21,3 @@ def test_magstatus_Pub():
 
 if __name__ == '__main__':
     test_magstatus_Pub()
-
