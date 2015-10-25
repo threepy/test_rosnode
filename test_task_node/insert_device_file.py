@@ -22,6 +22,7 @@ def readlineAndInsert():
         # execute insert
         insertTable(list3)
         print 'insert one line'
+    f.close()
     print'insert ok'
 
 def insertTable(list3):
