@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+get / set hikvsion param
+"""
 import rospy
 
 def param_hikvision():
@@ -11,14 +14,18 @@ def param_hikvision():
     rospy.loginfo("%s is %s", rospy.resolve_name('hikvision_node'), hikvision_node)
 
     # 获取cameraIP参数
-    CameraDict = rospy.get_param('/hikvision_node/CameraIp')
-    rospy.loginfo("CameraIP is %s", CameraDict)
-   # CameraIP, adminID, password, channelID = CameraList[0], CameraList[1], CameraList[2], CameraList[3]
+    cameraip = rospy.get_param('/hikvision_node/cameraIP')
+    print 'camearIP is %s'%cameraip
 
-    #print CameraIP, adminID, password, channelID
-    # 获取photo路径参数
-    PhotoPath = rospy.get_param('/hikvision_node/photoPath')
-    rospy.loginfo("photo path is %s", PhotoPath)
+    adminID = rospy.get_param('/hikvision_node/adminID')
+    print 'adminID is %s'%adminID
+
+
+    passwd = rospy.get_param('/hikvision_node/password')
+    print 'password is %s'%passwd
+
+    channelID = rospy.get_param('/hikvision_node/channelID')
+    print 'channelID is %s'%channelID
 
     # rospy.loginfo('setting parameters..')
     # rospy.set_param('/hikvision_node/photoPath', '/home/robot/catkin/src/hikvision/cfg/photo/lxg')
@@ -33,7 +40,7 @@ def param_hikvision():
     #     rospy.loginfo('parameter %s was already deleted'%rospy.resolve_name('to_delete'))
     #
     # search for a parameter
-    param_name = rospy.search_param('testlxg')
+    param_name = rospy.search_param('/hikvision_node/testlxg')
     rospy.loginfo('found testlxg parameter under key: %s'%param_name)
 
     # publish the value of utterance repeatedly

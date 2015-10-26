@@ -3,7 +3,12 @@
 
 import sqlite3
 import urllib
+import threading
 
+class ThreadClass(threading.Thread):
+    def run(self):
+        print self.getName()
+        readlineAndInsert()
 
 def readlineAndInsert():
     # open file, it's should be utf-8
@@ -17,7 +22,7 @@ def readlineAndInsert():
         for line in lines:
             list2 = line.split()
             insertTable(list2)
-            print "insert to map",list2[0],list2[1]
+            # print "insert to map",list2[0],list2[1]
 
     f.close()
     print "insert ok"
@@ -31,7 +36,9 @@ def insertTable(list3):
         conn.execute(sql)
     finally:
         conn.commit()
-        print "COMMIT!"
+        # print "COMMIT!"
 
 if __name__ == "__main__":
-    readlineAndInsert()
+    for i in range(1):
+        t = ThreadClass()
+        t.start()
