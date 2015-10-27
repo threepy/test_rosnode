@@ -8,10 +8,10 @@ from dg_msgs.msg import hikInfo
 
 def hi_pic_client(hk, isInfrared):
 
-    rospy.wait_for_service('hic_pic',10)
+    rospy.wait_for_service('hik_pic',10)
     try:
         # create a handle to the add_two_ints service
-        hi_pic_handle = rospy.ServiceProxy('hic_pic', getHikImg)
+        hi_pic_handle = rospy.ServiceProxy('hik_pic', getHikImg)
 
         rospy.loginfo("Requesting %s",hk)
         resp1 = hi_pic_handle(hk, isInfrared)
@@ -25,10 +25,10 @@ if __name__ == '__main__':
 
     hk = hikInfo()
     hk.zoom = 0
-    hk.focus = 0
-    hk.taskID = 0
-    hk.deviceID = 12
+    hk.focus = 900
+    hk.taskID = 123
+    hk.deviceID = 158
 
-    isInfrared = True
+    isInfrared = False
 
     hi_pic_client(hk,isInfrared)

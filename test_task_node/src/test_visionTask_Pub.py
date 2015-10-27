@@ -11,7 +11,7 @@ def callback(data):
 
 def test_visionTask_pub():
         # init node
-    rospy.init_node('test_visionTask_sub', anonymous=True)
+    rospy.init_node('test_processMag_client_and_visionTask_sub', anonymous=True)
 
     # subscribe from 'addTask' publisher
     rospy.Subscriber("visionTask", msg.visionInfo, callback)

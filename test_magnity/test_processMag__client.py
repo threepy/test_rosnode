@@ -20,17 +20,17 @@ def process_Img_client(pmag):
 if __name__ == '__main__':
     pmag = processMag()
 
-    pmag.path = '/home/robot/test_magnity/2015-09-09 16-53-06.ddt'
+    pmag.path = '/home/robot/history/1314691378/mag/1.ddt'
 
     pt1 = point()
-    pt1.x = 384
-    pt1.y = 248
+    pt1.x = 384*0.2
+    pt1.y = 288*0.2
 
     pmag.p1 = pt1
 
     pt2 = point()
-    pt2.x = 30
-    pt2.y = 240
+    pt2.x = 384*0.8
+    pt2.y = 288*0.8
 
     pmag.p2 = pt2
 
