@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import rospy
+from dg_msgs import msg
+import sqlite3
+import urllib
+
+def insert_process_table(colume_num):
+    url = '/home/robot/sqlite/robotdb.db'
+    db_uri = urllib.quote(url)
+    conn = sqlite3.connect(db_uri)
+    print 'delete process table data..'
+    conn.execute("DELETE FROM process")
+    conn.commit()
+    # insert into table TimedTask
+    for id in range(1,colume_num+1):
+        sql = "INSERT INTO process (deviceID, taskID, taskPlanID, pointID, method, execTime) \
+              values (1,1314691378,4,5,1,1234)"
+
+        conn.execute(sql)
+    conn.commit()
+    print 'insert  %s lines data ok.'%colume_num
+    conn.close()
+
+def test_visionTask_sub():
+    """
+    send msg to visionTask topic, and the subscriber will select process table
+    then call processMag server in magnity node, it will insert result table
+    """
+    # init a node
+    rospy.init_node('visionTask_Pub', anonymous=True)
+    # a publisher,topic name is addTask,msg class is msg.taskInfo
+    pub = rospy.Publisher('visionTask', msg.visionInfo, queue_size=10)
+    # 10 hz
+    rate = rospy.Rate(0.1)
+
+    taskID = 1314691378
+    # 0: start 1:end
+    state = 0
+
+    while not rospy.is_shutdown():
+        # send
+        pub.publish(taskID, state)
+        rate.sleep()
+        rospy.loginfo('publish to the topic %s', 'visionTask')
+        
+if __name__ == '__main__':
+    insert_process_table(1)
+    try:
+        test_visionTask_sub()
+    except rospy.ROSInterruptException:
+        pass
+
+
