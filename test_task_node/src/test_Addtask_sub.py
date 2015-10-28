@@ -10,7 +10,7 @@ def test_AddTask_Sub():
     # a publisher,topic name is addTask,msg class is msg.taskInfo
     pub = rospy.Publisher('addTask', msg.taskInfo, queue_size=10)
     # 10 hz
-    rate = rospy.Rate(10)
+    rate = rospy.Rate(0.1)
 
     # msg data object
     data = msg.taskInfo()
@@ -20,8 +20,8 @@ def test_AddTask_Sub():
     data.taskType = 0
     data.finishAction = 1
     data.taskName = 'name'
-    data.devices = []
-    data.points = []
+    data.devices = [1,2,3]
+    data.points = [5,6,8]
     data.forceExec = False
 
     while not rospy.is_shutdown():

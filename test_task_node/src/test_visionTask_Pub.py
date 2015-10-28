@@ -9,9 +9,9 @@ def callback(data):
     print data
     print '--------------------------'
 
-def test_visionTask_pub():
+def visionTask_sub():
         # init node
-    rospy.init_node('test_processMag_client_and_visionTask_sub', anonymous=True)
+    rospy.init_node('visionTask_sub', anonymous=True)
 
     # subscribe from 'addTask' publisher
     rospy.Subscriber("visionTask", msg.visionInfo, callback)
@@ -20,4 +20,4 @@ def test_visionTask_pub():
     rospy.spin()
 
 if __name__ == '__main__':
-    test_visionTask_pub()
+    visionTask_sub()

@@ -1,6 +1,24 @@
-"""
-ptzNormalPub = nh.advertise<dg_msgs::PanTilt>("setBasePtzNormal",20);
-hikSetZoomAndFocusPub = nh.advertise<dg_msgs::hikInfo>("setZoomAndFocus",20);
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-这两发布器写在函数里面,但task.cpp里没有调用,暂时不用
-"""
+import rospy
+from dg_msgs.msg import PanTilt
+
+def callback(data):
+
+    print data
+    print '----------------'
+
+def setBasePtzNormal_sub():
+        # init node
+    rospy.init_node('setBasePtzNormal_sub', anonymous=True)
+
+    # subscribe from 'addTask' publisher
+    rospy.Subscriber("setBasePtzNormal", PanTilt, callback)
+
+    print 'Wait for setBasePtzNormal publisher send msg'
+    #bolock until node is shutdown
+    rospy.spin()
+
+if __name__ == '__main__':
+    setBasePtzNormal_sub()

@@ -7,11 +7,11 @@ from dg_msgs.msg import processMag
 from dg_msgs.msg import point
 
 
-def process_Img_client(pmag):
+def processMag_client(pmag):
     rospy.wait_for_service('processMag')
     try:
-        processImg = rospy.ServiceProxy('processMag', magSrv)
-        resp1 = processImg(pmag)
+        processMag = rospy.ServiceProxy('processMag', magSrv)
+        resp1 = processMag(pmag)
 
         print resp1
     except rospy.ServiceException, e:
@@ -20,18 +20,16 @@ def process_Img_client(pmag):
 if __name__ == '__main__':
     pmag = processMag()
 
-    pmag.path = '/home/robot/history/1314691378/mag/1.ddt'
+    pmag.path = '/home/robot/history/1314691378/mag/3.ddt'
 
     pt1 = point()
     pt1.x = 384*0.2
     pt1.y = 288*0.2
-
     pmag.p1 = pt1
 
     pt2 = point()
     pt2.x = 384*0.8
     pt2.y = 288*0.8
-
     pmag.p2 = pt2
 
-    process_Img_client(pmag)
+    processMag_client(pmag)

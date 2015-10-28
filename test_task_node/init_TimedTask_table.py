@@ -29,7 +29,7 @@ def insert_TimedTask(colume_num):
         loopType = 1
 
         sql = "INSERT INTO TimedTask (taskPlanID, taskName, devices, taskType, loopType, runMode, SCHEDULE_PARAM, SCHEDULE_TIME, finishAction) \
-              VALUES (" + str(id) + ", 'name','(1,2,3)', 1," + str(loopType) + ", 1,'1,2,3,26,30'," + str(schedule_time) + ", 1)"
+              VALUES (" + str(id) + ", 'taskname','1,2,3,5,6,7', 1," + str(loopType) + ", 1,'1,2,3,26,30'," + str(schedule_time) + ", 0)"
 
         conn.execute(sql)
     conn.commit()
@@ -37,4 +37,4 @@ def insert_TimedTask(colume_num):
     conn.close()
 
 if __name__ == '__main__':
-    insert_TimedTask(100)
+    insert_TimedTask(10)

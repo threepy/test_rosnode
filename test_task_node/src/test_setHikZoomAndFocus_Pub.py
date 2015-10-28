@@ -10,16 +10,16 @@ def callback(data):
     print '--------------------------'
 
 
-def test_SetHikZoomAndFocus_Pub():
+def SetHikZoomAndFocus_sub():
     # init node
-    rospy.init_node('test_SetHikZoomAndFocus', anonymous=True)
+    rospy.init_node('SetHikZoomAndFocus_sub', anonymous=True)
 
     # hikvison节点订阅此SetHikZoomAndFocus话题
-    rospy.Subscriber("SetHikZoomAndFocus", hikInfo, callback)
+    rospy.Subscriber("setHikZoomAndFocus", hikInfo, callback)
     rospy.loginfo('wait for SetHikZoomAndFocus topic send message:')
     # bolock until node is shutdown
     rospy.spin()
 
 
 if __name__ == '__main__':
-    test_SetHikZoomAndFocus_Pub()
+    SetHikZoomAndFocus_sub()
