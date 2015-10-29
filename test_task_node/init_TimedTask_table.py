@@ -28,8 +28,8 @@ def insert_TimedTask(colume_num):
         # SCHEDULE_PARAM: 每周的周一至周日(1,2,3,4,5,6,7),(1,2,3,...31)每月的1,2,3号
         loopType = 1
 
-        sql = "INSERT INTO TimedTask (taskPlanID, taskName, devices, taskType, loopType, runMode, SCHEDULE_PARAM, SCHEDULE_TIME, finishAction) \
-              VALUES (" + str(id) + ", 'taskname','1,2,3,5,6,7', 1," + str(loopType) + ", 1,'1,2,3,26,30'," + str(schedule_time) + ", 0)"
+        sql = "INSERT INTO TimedTask (taskPlanID, taskName, taskType, loopType, runMode, SCHEDULE_PARAM, SCHEDULE_TIME, finishAction, RecordVideo) \
+              VALUES (" + str(id) + ", 'taskname', 1," + str(loopType) + ", 1,'1,2,3,26,30'," + str(schedule_time) + ", 0, 1)"
 
         conn.execute(sql)
     conn.commit()

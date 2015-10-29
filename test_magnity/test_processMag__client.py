@@ -20,7 +20,7 @@ def processMag_client(pmag):
 if __name__ == '__main__':
     pmag = processMag()
 
-    pmag.path = '/home/robot/history/1314691378/mag/3.ddt'
+    pmag.path = '/home/robot/history/1314691378/mag/1.ddt'
 
     pt1 = point()
     pt1.x = 384*0.2

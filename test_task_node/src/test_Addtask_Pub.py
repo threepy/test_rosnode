@@ -10,9 +10,9 @@ def callback(data):
     rospy.loginfo('Subscriber from addTask success, get these data:\n%s', data)
     print '-----------------------------------------------------'
 
-def test_AddTask_Pub():
+def AddTask_Sub():
     # init node
-    rospy.init_node('AddTask_Subscriber_test', log_level= rospy.DEBUG, anonymous=True)
+    rospy.init_node('addTask_Sub', log_level= rospy.INFO, anonymous=True)
 
     # subscribe from 'addTask' publisher
     rospy.Subscriber("addTask", msg.taskInfo, callback)
@@ -22,5 +22,5 @@ def test_AddTask_Pub():
     rospy.spin()
 
 if __name__ == '__main__':
-    test_AddTask_Pub()
+    AddTask_Sub()
 

@@ -12,7 +12,7 @@ def getMagImg_Pub():
     # 10 hz
     rate = rospy.Rate(0.1)
 
-    str = '/home/robot/history/1314691378/mag/getMag/'
+    str = '/home/robot/history/1314691378/mag/'
 
     while not rospy.is_shutdown():
         # send

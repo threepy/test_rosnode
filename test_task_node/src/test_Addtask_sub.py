@@ -4,9 +4,9 @@
 import rospy
 from dg_msgs import msg
 
-def test_AddTask_Sub():
+def addTask_pub():
     # init a node
-    rospy.init_node('test_AddTask_Sub', anonymous=True)
+    rospy.init_node('addTask_pub', anonymous=True)
     # a publisher,topic name is addTask,msg class is msg.taskInfo
     pub = rospy.Publisher('addTask', msg.taskInfo, queue_size=10)
     # 10 hz
@@ -26,13 +26,13 @@ def test_AddTask_Sub():
 
     while not rospy.is_shutdown():
         # send
-        pub.publish(data.taskID, data.taskPlanID,data.taskType, data.finishAction, data.taskName, data.devices, data.points, data.forceExec)
+        pub.publish(data)
         rate.sleep()
         rospy.loginfo('publish to the topic %s', 'addTask')
-        
+
 if __name__ == '__main__':
     try:
-        test_AddTask_Sub()
+        addTask_pub()
     except rospy.ROSInterruptException:
         pass
 
