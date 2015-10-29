@@ -10,13 +10,16 @@ def visionTask_Pub():
     # a publisher,topic name is addTask,msg class is msg.taskInfo
     pub = rospy.Publisher('visionTask', msg.visionInfo, queue_size=10)
     # 10 hz
-    rate = rospy.Rate(1)
+    rate = rospy.Rate(0.1)
 
     # msg data object
     data = msg.visionInfo()
 
-    data.taskID = 1314691378
-    data.state = 0
+    data.taskID = 205605164
+    data.state = 1
+
+
+
 
     while not rospy.is_shutdown():
         # send
