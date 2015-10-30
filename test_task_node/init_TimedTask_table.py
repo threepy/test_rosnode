@@ -5,9 +5,8 @@ import sqlite3
 import urllib
 import time
 
-url = '/home/robot/sqlite/robotdb.db'
-
 def insert_TimedTask(colume_num):
+    url = '/home/robot/sqlite/robotdb.db'
     db_uri = urllib.quote(url)
     conn = sqlite3.connect(db_uri)
     print 'delete TimedTask data..'

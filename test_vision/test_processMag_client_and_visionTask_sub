@@ -29,8 +29,12 @@ def test_visionTask_sub():
     then call processMag server in magnity node, it will insert result table
     *Need to test with Task_node*
     """
-    # init a node
-    rospy.init_node('visionTask_Pub', anonymous=True)
+    try:
+        # init a node
+        rospy.init_node('visionTask_Pub', anonymous=True)
+    except rospy.ROSInitException as e:
+        print e
+
     # a publisher,topic name is addTask,msg class is msg.taskInfo
     pub = rospy.Publisher('visionTask', msg.visionInfo, queue_size=10)
     # 10 hz
