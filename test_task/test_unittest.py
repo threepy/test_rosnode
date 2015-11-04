@@ -9,7 +9,7 @@ class TestTaskNode(unittest.TestCase):
 
     def setUp(self):
         # init node
-        rospy.init_node('test_task_node', anonymous=True)
+        rospy.init_node('test_task', anonymous=True)
     def tearDown(self):
         pass
 
