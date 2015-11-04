@@ -10,9 +10,9 @@ import random
 def base_info_Pub():
     # init a node
     rospy.init_node('base_info_Pub', anonymous=True)
-    # a publisher,topic name is addTask,msg class is msg.taskInfo
+    # init publisher
     pub = rospy.Publisher('base_info', BaseInfo, queue_size=10)
-    # 10 hz
+    # 20 hz
     rate = rospy.Rate(20)
 
     odom = Vector3()
@@ -49,6 +49,7 @@ def base_info_Pub():
     ang2 = 60
 
     while not rospy.is_shutdown():
+
         # send
         pub.publish(odom,velocity,pan,tilt,lArm1,lArm2,rArm1,rArm2,battery,stopButton,Ultrasonic_forward,Ultrasonic_back,drop_forward
             ,drop_back,softStop,ZERO_steering_wheel,overcurrent,PH_Encoder,Mag_Encoder,Ctrl_Board,ZERO_RobotArm,ZERO_Pantilt,ang1,ang2)

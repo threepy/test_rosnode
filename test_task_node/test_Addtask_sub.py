@@ -15,14 +15,19 @@ def addTask_pub():
     # msg data object
     data = msg.taskInfo()
 
-    data.taskID = 0
-    data.taskPlanID = 22
-    data.taskType = 0
-    data.finishAction = 1
-    data.taskName = 'name'
-    data.devices = [1,2,3]
-    data.points = [5,6,8]
+    data.sessionId = '00000000000000000000000002748856'
+    data.loopType = 1
+    data.runMode = 1
+    data.taskPlanID = 462972512
+    data.taskType = 1
+    data.finishAction = 0
+    data.taskName = 'taskname1'
+    data.devices = '1,2,3,4,5,6,7,8,9,10'
+    data.points = '45,32'
+    data.execTime = 35293
+    data.execDate = '20151104'
     data.forceExec = False
+    data.recordVideo = True
 
     while not rospy.is_shutdown():
         # send

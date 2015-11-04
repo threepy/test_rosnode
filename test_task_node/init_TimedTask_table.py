@@ -38,4 +38,4 @@ def insert_TimedTask(colume_num):
     conn.close()
 
 if __name__ == '__main__':
-    insert_TimedTask(100)
+    insert_TimedTask(10)

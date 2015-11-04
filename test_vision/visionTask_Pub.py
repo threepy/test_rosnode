@@ -19,7 +19,7 @@ def visionTask_Pub():
 
     # msg data object
     data = msg.visionInfo()
-    data.taskID = 205605164
+    data.taskID = 248045268
     data.state = 1
 
     while not rospy.is_shutdown():
