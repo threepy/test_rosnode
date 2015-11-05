@@ -20,8 +20,8 @@ def get_Imag_client(mg):
 if __name__ == '__main__':
     mg = magInfo()
 
-    mg.taskID = 1314691379
-    mg.deviceID = 1999
+    mg.taskID = 826204393
+    mg.deviceID = 1
     mg.focus = 560
     mg.isSaveTemp = True
 

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from dg_msgs import msg
+from dg_msgs.msg import taskReturnInfo
 
 def callback(data):
 
@@ -11,10 +11,10 @@ def callback(data):
 
 def test_taskReturnInfo_pub():
         # init node
-    rospy.init_node('taskReturnInfo_sub', anonymous=True)
+    rospy.init_node('taskReturnInfo_Sub', anonymous=True)
 
     # subscribe from 'addTask' publisher
-    rospy.Subscriber("taskReturnInfo", msg.taskInfo, callback)
+    rospy.Subscriber("taskReturnInfo", taskReturnInfo, callback)
 
     print 'Wait for taskReturnInfo publisher send msg'
     #bolock until node is shutdown

@@ -20,8 +20,8 @@ def processMag_client(pmag):
 if __name__ == '__main__':
     pmag = processMag()
 
-    pmag.taskID = 1314691379
-    pmag.deviceID = 1
+    pmag.taskID = 282698953
+    pmag.deviceID = 1999
 
     pt1 = point()
     pt1.x = 384*0.2

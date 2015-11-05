@@ -13,7 +13,7 @@ def SetMagFocus_Pub():
     rate = rospy.Rate(0.1)
 
     data = magInfo()
-    data.focus = 400
+    data.focus = 580
     data.isSaveTemp = True
     data.taskID = 42425
     data.deviceID = 1

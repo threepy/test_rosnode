@@ -13,7 +13,7 @@ def stopTask_Pub():
     rate = rospy.Rate(0.1)
 
     # msg data object
-    str = 'taskname'
+    str = 'taskname1'
 
     while not rospy.is_shutdown():
         # send
