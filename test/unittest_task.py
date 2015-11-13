@@ -5,11 +5,45 @@ import rospy
 from dg_msgs import msg
 import unittest
 
+import sqlite3
+import urllib
+import time
+import logging
+
+PKG = 'task'
+
+def init_TimedTask_table():
+    url = '/home/robot/sqlite/robotdb.db'
+    db_uri = urllib.quote(url)
+    conn = sqlite3.connect(db_uri)
+    logging.info("Delete from TimeTask..")
+    conn.execute("DELETE FROM TimedTask")
+    conn.commit()
+
+    # get time now
+    hour = time.strftime('%H',  time.localtime(time.time()))
+    min = time.strftime('%M', time.localtime(time.time()))
+    second = time.strftime('%S', time.localtime(time.time()))
+    # translate to second
+    time_sec = int(hour)*3600 + int(min)*60 + int(second)
+    schedule_time = time_sec + 5
+    # loopType: 0:立即 1:每天, 2:每周, 3:每月, 4:单次
+    # SCHEDULE_PARAM: 每周的周一至周日(1,2,3,4,5,6,7),(1,2,3,...31)每月的1,2,3号
+    loopType = 1
+
+    taskname = 'taskname'
+    sql = "INSERT INTO TimedTask (taskPlanID, taskName, taskType, loopType, runMode, SCHEDULE_PARAM, SCHEDULE_TIME, finishAction, RecordVideo) \
+          VALUES (" + str(id) + ",'" + taskname + "', 1," + str(loopType) + ", 1,'1,2,3,26,30'," + str(schedule_time) + ", 0, 1)"
+    conn.execute(sql)
+    conn.commit()
+
+
 class TestTaskNode(unittest.TestCase):
 
     def setUp(self):
         # init node
         rospy.init_node('test_task', anonymous=True)
+
     def tearDown(self):
         pass
 

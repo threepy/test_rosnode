@@ -18,14 +18,16 @@ def addTask_pub():
     data.sessionId = '00000000000000000000000002748856'
     data.loopType = 1
     data.runMode = 1
-    data.taskPlanID = 462972512
+    data.taskPlanID = '1234999'
     data.taskType = 1
     data.finishAction = 0
-    data.taskName = 'taskname1'
-    data.devices = '1,2,3,4,5,6,7,8,9,10'
+    data.taskName = 'task_name'
+    data.devices = '1,2,3,4,5,6,7,8'
     data.points = '45,32'
-    data.execTime = 35293
-    data.execDate = '20151104'
+    data.execTime = '14:00:12'
+
+
+    data.execDate = '1,2,3,4'
     data.forceExec = False
     data.recordVideo = True
 

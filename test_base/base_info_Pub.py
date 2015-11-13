@@ -4,59 +4,64 @@
 import rospy
 from dg_msgs.msg import BaseInfo
 from geometry_msgs.msg import Vector3
-import random
+import sys
 
 
 def base_info_Pub():
     # init a node
-    rospy.init_node('base_info_Pub', anonymous=True)
+    rospy.init_node('base_info_Pub', log_level=rospy.INFO, anonymous=True)
     # init publisher
     pub = rospy.Publisher('base_info', BaseInfo, queue_size=10)
     # 20 hz
     rate = rospy.Rate(20)
 
-    odom = Vector3()
-    odom.x = 10
-    odom.y = 20
-    odom.z = 30
+    info = BaseInfo()
 
-    velocity = Vector3()
-    velocity.x = 400
-    velocity.y = 500
-    velocity.z = 600
+    info.odom = Vector3()
+    info.odom.x = 10
+    info.odom.y = 20
+    info.odom.z = 30
 
-    pan = 0
-    tilt = 0
-    lArm1 = 0
-    lArm2 = 0
-    rArm1 = 0
-    rArm2 = 0
-    battery = 50
-    stopButton = False
-    Ultrasonic_forward = False
-    Ultrasonic_back = False
-    drop_forward = False
-    drop_back = False
-    softStop = False
-    ZERO_steering_wheel = False
-    overcurrent = False
-    PH_Encoder = False
-    Mag_Encoder = False
-    Ctrl_Board = False
-    ZERO_RobotArm = False
-    ZERO_Pantilt = False
-    ang1 = 10
-    ang2 = 60
+    info.velocity = Vector3()
+    info.velocity.x = 400
+    info.velocity.y = 500
+    info.velocity.z = 600
+
+    info.pan = 0
+    info.tilt = 0
+    info.lArm1 = 0
+    info.lArm2 = 0
+    info.rArm1 = 0
+    info.rArm2 = 0
+    info.battery = 50
+    info.stopButton = False
+    info.Ultrasonic_forward = False
+    info.Ultrasonic_back = False
+    info.drop_forward = False
+    info.drop_back = False
+    info.softStop = False
+    info.ZERO_steering_wheel = False
+    info.overcurrent = False
+    info.PH_Encoder = False
+    info.Mag_Encoder = False
+    info.Ctrl_Board = False
+    info.ZERO_RobotArm = False
+    info.ZERO_Pantilt = False
+    info.ang1 = 10
+    info.ang2 = 60
 
     while not rospy.is_shutdown():
-
-        # send
-        pub.publish(odom,velocity,pan,tilt,lArm1,lArm2,rArm1,rArm2,battery,stopButton,Ultrasonic_forward,Ultrasonic_back,drop_forward
-            ,drop_back,softStop,ZERO_steering_wheel,overcurrent,PH_Encoder,Mag_Encoder,Ctrl_Board,ZERO_RobotArm,ZERO_Pantilt,ang1,ang2)
-        rate.sleep()
-        pan = pan + 1
-        tilt = random.randint(-32768,32767)
-        rospy.loginfo('publish to the topic %s', 'base_info')
+        try:
+            # send
+            pub.publish(info)
+            rospy.loginfo('send msg to the topic: %s', 'base_info')
+            rate.sleep()
+            info.pan = info.pan + 1
+            if info.pan == sys.maxint:
+                info.pan = 0
+        except rospy.ROSException as e:
+            rospy.logerr('%s', e)
+            break
 
 if __name__ == '__main__':
     try:

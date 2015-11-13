@@ -13,7 +13,7 @@ def deleteTask_pub():
     rate = rospy.Rate(1)
 
     # msg data object
-    str = 'taskname8'
+    str = 'task_name'
     sessionId = '00000000000000000000000002748856'
 
     while not rospy.is_shutdown():

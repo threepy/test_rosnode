@@ -1,0 +1,9 @@
+<!-- -->
+<launch>
+  <node name="task_node" pkg="task" type="task_node" output ="screen">
+   <rosparam file="$(find task)/cfg/task.yaml" command="load" />
+   <param name="devicePath" value="$(find task)/cfg/device.txt"/>
+   <param name="picPath" value="$(find task)/pic/"/>
+  </node>
+  <test test-name="test_task_node" pkg="task" type="test_task.py" />
+</launch>
