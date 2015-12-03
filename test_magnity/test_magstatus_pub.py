@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from std_msgs import msg
+from std_msgs.msg import String
 
 def callback(data):
 
@@ -14,7 +14,7 @@ def test_magstatus_Pub():
     rospy.init_node('test_magstatus_Pub', anonymous=True)
 
     # subscribe from 'addTask' publisher
-    rospy.Subscriber("magStatus", msg.String, callback)
+    rospy.Subscriber("magStatus", String, callback)
     rospy.loginfo('wait for magstatus topic send message:')
     #bolock until node is shutdown
     rospy.spin()

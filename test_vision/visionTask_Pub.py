@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from dg_msgs import msg
+from dg_msgs.msg import visionInfo
 
 def visionTask_Pub():
 
@@ -13,7 +13,7 @@ def visionTask_Pub():
         print e
 
     # a publisher,topic name is addTask,msg class is msg.taskInfo
-    pub = rospy.Publisher('visionTask', msg.visionInfo, queue_size=10)
+    pub = rospy.Publisher('visionTask', visionInfo, queue_size=10)
     # 10 hz
     rate = rospy.Rate(0.1)
 

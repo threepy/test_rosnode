@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from std_msgs import msg
+from std_msgs.msg import String
 
 def stopTask_Pub():
     # init a node
     rospy.init_node('stopTask_pub', anonymous=True)
     # a publisher,topic name is addTask,msg class is msg.taskInfo
-    pub = rospy.Publisher('stopTask', msg.String, queue_size=10)
+    pub = rospy.Publisher('stopTask', String, queue_size=10)
     # 10 hz
     rate = rospy.Rate(0.1)
 

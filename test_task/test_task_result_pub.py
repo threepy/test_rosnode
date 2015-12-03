@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from std_msgs import msg
+from std_msgs.msg import String
 
 def callback(data):
 
@@ -14,7 +14,7 @@ def test_task_result_Pub():
     rospy.init_node('test_task_result_Pub', anonymous=True)
 
     # subscribe from 'addTask' publisher
-    rospy.Subscriber("task_result", msg.String, callback)
+    rospy.Subscriber("task_result", String, callback)
 
     print 'Wait for test_task publisher send msg'
     #bolock until node is shutdown

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from dg_msgs import msg
+from dg_msgs.msg import deviceReturnInfo
 
 def callback(data):
 
@@ -14,7 +14,7 @@ def test_deviceReturnInfo_pub():
     rospy.init_node('deviceReturnInfo_sub', anonymous=True)
 
     # subscribe from 'addTask' publisher
-    rospy.Subscriber("deviceReturnInfo", msg.deviceReturnInfo, callback)
+    rospy.Subscriber("deviceReturnInfo", deviceReturnInfo, callback)
 
     print 'Wait for deviceReturnInfo publisher send msg'
     #bolock until node is shutdown

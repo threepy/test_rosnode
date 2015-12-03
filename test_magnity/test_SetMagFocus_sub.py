@@ -15,7 +15,7 @@ def SetMagFocus_Pub():
     data = magInfo()
     data.focus = 580
     data.isSaveTemp = True
-    data.taskID = 42425
+    data.taskID = '42425'
     data.deviceID = 1
 
     while not rospy.is_shutdown():

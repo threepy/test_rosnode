@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from dg_msgs import msg
+from dg_msgs.msg import visionInfo
 
 def callback(data):
 
@@ -14,7 +14,7 @@ def visionTask_sub():
     rospy.init_node('visionTask_sub', anonymous=True)
 
     # subscribe from 'addTask' publisher
-    rospy.Subscriber("visionTask", msg.visionInfo, callback)
+    rospy.Subscriber("visionTask", visionInfo, callback)
     rospy.loginfo('wait for visionTask topic send message:')
     #bolock until node is shutdown
     rospy.spin()
