@@ -9,21 +9,21 @@ def callback(data):
     print '--------------------------'
 
 
-def getHikImg_Pub():
+def setHikLabel():
     # init node
-    rospy.init_node('getHikImg_Pub', anonymous=True)
-    pub = rospy.Publisher('getHikImg', String, queue_size=10)
+    rospy.init_node('setHikLabel_Pub', anonymous=True)
+    pub = rospy.Publisher('setHikLabel', String, queue_size=10)
     rate = rospy.Rate(0.2)
 
-    data = '111'
+    data = '20'
     while not rospy.is_shutdown():
         try:
             # send
             pub.publish(data)
-            rospy.loginfo('send msg to the topic: %s', 'getHikImg')
+            rospy.loginfo('send msg to the topic: %s', 'setHikLabel')
             rate.sleep()
         except rospy.ROSException as e:
             rospy.logerr('%s', e)
 
 if __name__ == '__main__':
-    getHikImg_Pub()
+    setHikLabel()

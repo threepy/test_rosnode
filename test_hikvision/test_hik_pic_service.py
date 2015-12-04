@@ -25,8 +25,8 @@ if __name__ == '__main__':
 
     hk = hikInfo()
     hk.zoom = 0
-    hk.focus = 900
-    hk.taskID = 123
+    hk.focus = 40000 # min:4096
+    hk.taskID = '123'
     hk.deviceID = 158
 
     isInfrared = False

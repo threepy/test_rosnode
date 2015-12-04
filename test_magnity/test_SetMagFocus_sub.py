@@ -26,6 +26,6 @@ def SetMagFocus_Pub():
 
 if __name__ == '__main__':
     try:
-        SetMagFocus_Pub()
+        SetMagFocus_Pub()d
     except rospy.ROSInterruptException:
         pass
