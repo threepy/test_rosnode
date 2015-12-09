@@ -21,8 +21,8 @@ def navigation_state_Pub():
     for id in range(11): #send for 10 times
         # send
         pub.publish(data, sessionId)
-        id = id + 1
-        data = 'OnNode:' + str(id) + ' NextNode:2'
+        id = id*10 + 10
+        data = 'OnNode:' + str(id) + ' NextNode:20'
         rate.sleep()
         rospy.loginfo('publish to the topic %s', 'navigation_state')
 

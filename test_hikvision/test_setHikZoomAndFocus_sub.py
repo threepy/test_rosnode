@@ -17,7 +17,7 @@ def setHikZoomAndFocus_Pub():
 
     hk = hikInfo()
     hk.zoom = -1 # min: 0 max: 16381
-    hk.focus = 10000 # min: 4096 max: 49152
+    hk.focus = -1 # min: 4096 max: 49152
     hk.taskID = '123'
     hk.deviceID = 158
 

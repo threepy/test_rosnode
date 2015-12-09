@@ -13,7 +13,7 @@ def base_info_Pub():
     # init publisher
     pub = rospy.Publisher('base_info', BaseInfo, queue_size=10)
     # 20 hz
-    rate = rospy.Rate(20)
+    rate = rospy.Rate(5)
 
     info = BaseInfo()
 
@@ -34,19 +34,19 @@ def base_info_Pub():
     info.rArm1 = 0
     info.rArm2 = 0
     info.battery = 50
-    info.stopButton = False
-    info.Ultrasonic_forward = False
-    info.Ultrasonic_back = False
-    info.drop_forward = False
-    info.drop_back = False
-    info.softStop = False
-    info.ZERO_steering_wheel = False
-    info.overcurrent = False
-    info.PH_Encoder = False
-    info.Mag_Encoder = False
-    info.Ctrl_Board = False
-    info.ZERO_RobotArm = False
-    info.ZERO_Pantilt = False
+    # info.stopButton = False
+    # info.Ultrasonic_forward = False
+    # info.Ultrasonic_back = False
+    # info.drop_forward = False
+    # info.drop_back = False
+    # info.softStop = False
+    # info.ZERO_steering_wheel = False
+    # info.overcurrent = False
+    # info.PH_Encoder = False
+    # info.Mag_Encoder = False
+    # info.Ctrl_Board = False
+    # info.ZERO_RobotArm = False
+    # info.ZERO_Pantilt = False
     info.ang1 = 10
     info.ang2 = 60
 

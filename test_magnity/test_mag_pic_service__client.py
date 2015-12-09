@@ -21,7 +21,7 @@ if __name__ == '__main__':
     mg = magInfo()
 
     mg.taskID = 'a504699e639a4980adba75f9aedaabff'
-    mg.deviceID = 10
+    mg.deviceID = '7edc0ff900914e63bc20366c6729a42a'
     mg.focus = 760
     mg.isSaveTemp = True
 

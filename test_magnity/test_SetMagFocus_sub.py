@@ -15,8 +15,8 @@ def SetMagFocus_Pub():
     data = magInfo()
     data.focus = 580
     data.isSaveTemp = True
-    data.taskID = '42425'
-    data.deviceID = 1
+    data.taskID = 'a504699e639a4980adba75f9aedaabfa'
+    data.deviceID = 'c8e488d06b0046409f5e76746c5b9601'
 
     while not rospy.is_shutdown():
         # send
@@ -26,6 +26,6 @@ def SetMagFocus_Pub():
 
 if __name__ == '__main__':
     try:
-        SetMagFocus_Pub()d
+        SetMagFocus_Pub()
     except rospy.ROSInterruptException:
         pass

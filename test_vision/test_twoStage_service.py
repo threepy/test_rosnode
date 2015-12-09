@@ -19,8 +19,8 @@ def twoStage_client(taskID, deviceID, pan, tilt):
 
 if __name__ == '__main__':
 
-    taskID = 123
-    deviceID = 3232
+    taskID = 'd630a1f488af4aa2a4d5f366a0494fd6'
+    deviceID = '273d08cc881d4371a9e7a9a227a960a3'
     pan = 22.9
     tilt = 12.4
 

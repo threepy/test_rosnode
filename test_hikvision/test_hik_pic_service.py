@@ -24,10 +24,10 @@ def hi_pic_client(hk, isInfrared):
 if __name__ == '__main__':
 
     hk = hikInfo()
-    hk.zoom = 0
-    hk.focus = 40000 # min:4096
-    hk.taskID = '123'
-    hk.deviceID = 158
+    hk.zoom = 99
+    hk.focus = 31421 # min:4096
+    hk.taskID = 'd630a1f488af4aa2a4d5f366a0494fd6'
+    hk.deviceID = '4b43b0aee35624cd95b910189b3dc231'
 
     isInfrared = False
 

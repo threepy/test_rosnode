@@ -15,7 +15,7 @@ def setHikZoom_Pub():
     pub = rospy.Publisher('setHikZoom', String, queue_size=10)
     rate = rospy.Rate(0.2)
 
-    data = '-2'
+    data = '-1'
     while not rospy.is_shutdown():
         try:
             # send

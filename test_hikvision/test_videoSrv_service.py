@@ -18,6 +18,6 @@ def videoSrv_client(bStart, taskID):
 
 if __name__ == '__main__':
     bStart = False # 1: start 0: stop
-    taskID = '1234'
+    taskID = 'a504699e639a4980adba75f9aedaabfa'
 
     videoSrv_client(bStart, taskID)

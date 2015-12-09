@@ -13,9 +13,11 @@ def insert_process_table(colume_num):
     conn.commit()
     # insert into table TimedTask
     for id in range(1,colume_num+1):
-        # method:
-        sql = "INSERT INTO process (deviceID, taskID, taskPlanID, pointID, method, execTime, envTemperature, Humidity, WindSpeed, pm25, infraDistance, infraEmissivity, voltage) \
-              values (10,'a504699e639a4980adba75f9aedaabff',4,5,1,1234, 45.32, 23.21, 32.09, 13.12, 34.44, 43.21, 56.3)"
+        # method: 0~10
+        method = 0
+        bTaskOver = 1 # 1: over
+        sql = "INSERT INTO process (deviceID, taskID, taskPlanID, pointID, method, execTime, envTemperature, Humidity, WindSpeed, WindDirect, pm25, infraDistance, infraEmissivity, voltage, bTaskOver) \
+              values ('e1671797c52e15f763380b45e841ec32','d630a1f488af4aa2a4d5f366a0494fd6',1,5," + str(method) + ",1234, 45.32, 23.21, 32.09, 1, 13.12, 34.44, 43.21, 56.3," + str(bTaskOver) + ")"
 
         conn.execute(sql)
     conn.commit()
