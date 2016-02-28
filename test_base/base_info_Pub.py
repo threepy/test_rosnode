@@ -13,7 +13,7 @@ def base_info_Pub():
     # init publisher
     pub = rospy.Publisher('base_info', BaseInfo, queue_size=10)
     # 20 hz
-    rate = rospy.Rate(5)
+    rate = rospy.Rate(1)
 
     info = BaseInfo()
 
