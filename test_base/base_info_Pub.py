@@ -29,11 +29,11 @@ def base_info_Pub():
 
     info.pan = 0
     info.tilt = 0
-    info.lArm1 = 0
-    info.lArm2 = 0
-    info.rArm1 = 0
-    info.rArm2 = 0
-    info.battery = 50
+    info.lArm1 = 1
+    info.lArm2 = 2
+    info.rArm1 = 3
+    info.rArm2 = 4
+    info.battery = 500.00
     # info.stopButton = False
     # info.Ultrasonic_forward = False
     # info.Ultrasonic_back = False
@@ -57,8 +57,10 @@ def base_info_Pub():
             rospy.loginfo('send msg to the topic: %s', 'base_info')
             rate.sleep()
             info.pan = info.pan + 1
-            if info.pan == sys.maxint:
+            info.tilt = info.tilt + 1
+            if info.pan == sys.maxint or info.pan == sys.maxint:
                 info.pan = 0
+                info.tilt = 0
         except rospy.ROSException as e:
             rospy.logerr('%s', e)
             break
