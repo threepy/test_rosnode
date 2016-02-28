@@ -19,7 +19,7 @@ def base_info_Pub():
 
     info.odom = Vector3()
     info.odom.x = 10
-    info.odom.y = 20
+    info.odom.y = 2
     info.odom.z = 30
 
     info.velocity = Vector3()
