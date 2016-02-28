@@ -2,21 +2,17 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from dg_msgs.msg import magInfo
+from std_msgs.msg import UInt32
 
 def setFocusBlock_Pub():
     # init a node
     rospy.init_node('setFocusBlock_Pub', anonymous=True)
     # a publisher,topic name is addTask,msg class is msg.taskInfo
-    pub = rospy.Publisher('setFocusBlock', magInfo, queue_size=10)
+    pub = rospy.Publisher('setFocusBlock', UInt32, queue_size=10)
     # 10 hz
     rate = rospy.Rate(0.1)
 
-    data = magInfo()
-    data.focus = 400
-    data.isSaveTemp = True
-    data.taskID = 'a504699e639a4980adba75f9aedaabfa'
-    data.deviceID = 'c8e488d06b0046409f5e76746c5b9601'
+    data = 400
 
     while not rospy.is_shutdown():
         # send

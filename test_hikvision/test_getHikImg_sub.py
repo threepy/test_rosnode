@@ -15,7 +15,7 @@ def getHikImg_Pub():
     pub = rospy.Publisher('getHikImg', String, queue_size=10)
     rate = rospy.Rate(0.2)
 
-    data = '111'
+    data = 'test'
     while not rospy.is_shutdown():
         try:
             # send

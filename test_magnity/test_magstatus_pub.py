@@ -7,7 +7,7 @@ from std_msgs.msg import String
 def callback(data):
 
     print data
-    print '--------------------------'
+    print '----------------'
 
 def test_magstatus_Pub():
         # init node

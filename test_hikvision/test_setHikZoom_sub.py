@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from std_msgs.msg import String
+from std_msgs.msg import UInt32
 
 def callback(data):
     print data
@@ -12,16 +12,16 @@ def callback(data):
 def setHikZoom_Pub():
     # init node
     rospy.init_node('setHikZoom_pub', anonymous=True)
-    pub = rospy.Publisher('setHikZoom', String, queue_size=10)
+    pub = rospy.Publisher('setHikZoom', UInt32, queue_size=10)
     rate = rospy.Rate(0.2)
 
-    data = '-1'
+    data = 0
     while not rospy.is_shutdown():
         try:
             # send
             pub.publish(data)
-            rospy.loginfo('send msg to the topic: %s', 'setHikZoom')
             rate.sleep()
+            rospy.loginfo('send msg to the topic: %s', 'setHikZoom')
         except rospy.ROSException as e:
             rospy.logerr('%s', e)
 

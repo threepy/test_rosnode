@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     mg.taskID = 'a504699e639a4980adba75f9aedaabff'
     mg.deviceID = '7edc0ff900914e63bc20366c6729a42a'
-    mg.focus = 760
+    mg.focus = 560
     mg.isSaveTemp = True
 
     get_Imag_client(mg)

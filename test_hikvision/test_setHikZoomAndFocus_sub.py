@@ -16,10 +16,10 @@ def setHikZoomAndFocus_Pub():
     rate = rospy.Rate(0.2)
 
     hk = hikInfo()
-    hk.zoom = -1 # min: 0 max: 16381
-    hk.focus = -1 # min: 4096 max: 49152
+    hk.zoom = 0 # min: 0 max: 16381
+    hk.focus = 49153 # min: 4096 max: 49152
     hk.taskID = '123'
-    hk.deviceID = 158
+    hk.deviceID = '158'
 
     while not rospy.is_shutdown():
         try:

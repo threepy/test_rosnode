@@ -17,7 +17,7 @@ def videoSrv_client(bStart, taskID):
         print 'Service call failed: %s'%e
 
 if __name__ == '__main__':
-    bStart = False # 1: start 0: stop
+    bStart = True # 1: start 0: stop
     taskID = 'a504699e639a4980adba75f9aedaabfa'
 
     videoSrv_client(bStart, taskID)
